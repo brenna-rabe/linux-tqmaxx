@@ -99,6 +99,9 @@ static inline bool watchdog_need_worker(struct watchdog_device *wdd)
 	unsigned int hm = wdd->max_hw_heartbeat_ms;
 	unsigned int t = wdd->timeout * 1000;
 
+	printk("In watchdog_need_worker\n");
+	printk("WD heartbeat max: %u\n", hm);
+	printk("WD timeout: %u\n", t);
 	/*
 	 * A worker to generate heartbeat requests is needed if all of the
 	 * following conditions are true.

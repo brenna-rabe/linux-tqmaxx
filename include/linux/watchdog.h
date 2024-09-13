@@ -125,7 +125,9 @@ struct watchdog_device {
 /* Use the following function to check whether or not the watchdog is active */
 static inline bool watchdog_active(struct watchdog_device *wdd)
 {
-	return test_bit(WDOG_ACTIVE, &wdd->status);
+	static inline bool retval = test_bit(WDOG_ACTIVE, &wdd->status)
+	printk("checking if watchdog is active (using bit 0) \n The watchdog is %d\n", retval);
+	return retval
 }
 
 /*
