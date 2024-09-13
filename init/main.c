@@ -926,7 +926,6 @@ asmlinkage __visible void __init __no_sanitize_address start_kernel(void)
 	 * workqueue to take non-housekeeping into account.
 	 */
 	housekeeping_init();
-        panic("\n\nIN THE KERNEL, FINSIHED HOUSEKEEPING INIT. GONNA PANIC!\n\n");
 	/*
 	 * Allow workqueue creation and work item queueing/cancelling
 	 * early.  Work item execution depends on kthreads and starts after
